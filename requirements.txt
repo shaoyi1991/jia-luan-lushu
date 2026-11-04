@@ -1,0 +1,7 @@
+requests>=2.32
+gpxpy==1.6.2
+polyline>=2.0.2
+eviltransform>=0.1.1
+pycryptodome>=3.20
+sqlalchemy>=2.0
+haversine==2.8.0

@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-03T15:01:39+08:00",
+  "source": "src/static/activities.json",
+  "source_sha256": "a1fc680c72d913f8c7f66e798e0a4f4a018142443d9a720a6b5f5e03d8d8500d",
+  "scope": "export as-is; Run + VirtualRun; no cross-device deduplication",
+  "total_records": 2257,
+  "types": {
+    "Hiking": 20,
+    "Ride": 9,
+    "Run": 1815,
+    "VirtualRun": 4,
+    "Walk": 409
+  },
+  "date_from": "2018-03-04",
+  "data_through": "2026-11-03",
+  "run_records": 1819,
+  "run_km": 13555.383,
+  "run_days": 1740,
+  "run_longest_streak": {
+    "days": 98,
+    "from": "2020-11-19",
+    "to": "2021-02-24"
+  },
+  "records_with_track": 1810,
+  "duplicate_ids": 0
+}

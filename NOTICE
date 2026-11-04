@@ -1,0 +1,14 @@
+This project adapts Keep sync, the SQLite activity schema, and GPX export
+from running_page:
+
+  https://github.com/yihong0618/running_page
+
+Copyright (c) 2025 yihong
+Licensed under the MIT License. See LICENSE.
+
+The personal dashboard (layout, copy, and totals poster) is built for 贾栾
+and is not a copy of the upstream interface.
+
+Keep's track payload is decoded with client constants published in
+running_page. Those constants are not account credentials. Phone number and
+password are read only from KEEP_MOBILE and KEEP_PASSWORD.

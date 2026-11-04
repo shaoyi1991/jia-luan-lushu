@@ -1,0 +1,482 @@
+@import '@fontsource/fraunces/400.css';
+
+:root{color:#19372e;background:#f2efe5;font-family:system-ui,"PingFang SC",sans-serif;--ink:#19372e;--paper:#fcfaf5;--muted:#55645a;--copper:#9a502c;--line:#d5d9cd;--shadow:0 1px 2px rgba(23,44,36,.06),0 16px 36px -18px rgba(23,44,36,.25)}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#f6f3ea 0%,#f0ede1 100%);background-attachment:fixed}
+a{color:inherit;text-underline-offset:.24em}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0;text-align:inherit}
+:focus-visible{outline:2px solid #b16a3c;outline-offset:3px}
+[id]{scroll-margin-top:70px}
+figure,p,h1,h2,h3,h4{margin:0}
+p{line-height:1.75}
+small{font-size:.76rem}
+.wrap{width:min(1120px,calc(100% - 64px));margin-inline:auto}
+.skip-link{position:absolute;top:-100px;z-index:5;background:white;padding:12px}
+.skip-link:focus{top:0}
+.top{min-height:58px;display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:.78rem}
+.top button{border:1px solid currentColor;border-radius:2px;padding:7px 9px}
+
+/* ---------- 首屏：夜色里描出的一条清晨路线 ---------- */
+.hero{position:relative;isolation:isolate;background:#0d271f;color:#f6efe2;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:auto -12% -34% -12%;height:62%;z-index:-1;
+  background:radial-gradient(58% 100% at 58% 100%,#c97f4b59 0%,#c97f4b1f 42%,transparent 72%)}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:min(660px,82svh);padding-block:64px 38px;gap:36px}
+.kicker{font-size:.74rem;letter-spacing:.13em;font-weight:680;text-transform:uppercase}
+.hero h1{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:clamp(4rem,10vw,8.6rem);line-height:.99;letter-spacing:-.07em;margin:18px 0 26px}
+.hero h1 span{color:#d78d5b}
+.lede{max-width:24em;font-size:clamp(1.04rem,2vw,1.42rem)}
+.start{display:inline-block;margin-top:24px;font-size:.83rem}
+.hero-line{text-align:center;color:#d78d5b}
+.signature{width:100%;height:auto;display:block}
+.hero-line .signature{height:clamp(170px,32vw,380px);filter:drop-shadow(0 0 10px #ffcd9440) drop-shadow(0 22px 30px #00000055)}
+.hero-line .signature polyline{stroke-dasharray:1;stroke-dashoffset:1;animation:hero-draw 9s cubic-bezier(.35,.1,.25,1) .6s forwards}
+@keyframes hero-draw{to{stroke-dashoffset:0}}
+.hero-line-note{margin-top:10px;font-size:.74rem;letter-spacing:.14em;color:#c9b795}
+.hero-stats{border-top:1px solid #ffffff42;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-block:20px 14px}
+.hero-stats b,.facts b{display:block;font:400 clamp(1.05rem,3.4vw,2.7rem)/1.2 Fraunces,Georgia,serif;font-variant-numeric:tabular-nums}
+.hero-stats small{display:block;margin-top:6px;color:#cfc6ad;line-height:1.5}
+.hero-meta{margin:0 auto 22px;font-size:.72rem;color:#a8a28c}
+
+/* ---------- 章节与论据（纸面浮起一层） ---------- */
+.annual,.chapter{padding-block:clamp(54px,9vw,124px)}
+h2{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:clamp(1.95rem,5.4vw,4rem);line-height:1.14;letter-spacing:-.045em;margin:.24em 0 .5em}
+.chapter-head{margin-bottom:30px;max-width:720px}
+.chapter-head p,.story-line{font-size:1.06rem;max-width:44em}
+.story-line{margin:24px 0}
+.paper{background:var(--paper);border:1px solid #dcd8c8;padding:clamp(13px,3vw,28px);margin-block:12px;min-width:0;
+  border-radius:10px;box-shadow:var(--shadow)}
+figcaption{font-weight:700;margin-bottom:16px;line-height:1.5}
+figcaption small{font-weight:400;color:var(--muted)}
+.note{font-size:.8rem;color:var(--muted);margin-top:12px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chapter-lede{font-size:1.02rem;line-height:2;color:var(--muted);max-width:46em;margin-bottom:22px}
+/* 首跑一幕：徒步之后，第一条跑步记录 */
+.first-run{display:grid;grid-template-columns:minmax(190px,auto) 1fr;gap:44px;align-items:end;padding-block:38px 8px;margin-top:26px;border-top:1px dashed #c9c3ad}
+.first-run-number h3{font:400 clamp(3.2rem,7vw,5.4rem)/1 Fraunces,Georgia,serif;color:var(--copper);margin-top:12px;font-variant-numeric:tabular-nums}
+.first-run-number h3 small{font-size:.32em;color:var(--muted)}
+.first-run-copy>p:first-child{color:var(--muted)}
+.first-run-line{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:clamp(1.2rem,2.4vw,1.7rem);line-height:1.9;margin:14px 0 10px}
+.first-run-story{max-width:38em;margin-top:12px}
+/* 长期主义同轴图（旧版移植）：上层配速折线，下层跑量柱 */
+.pace-figure{margin:0;min-width:0}
+.pace-figure svg{width:100%;display:block;margin-top:14px;color:var(--copper)}
+.pace-baseline{stroke:var(--line);stroke-width:1}
+.pace-line{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.pace-dot{fill:var(--paper);stroke:currentColor;stroke-width:2}
+.pace-dot-last{fill:currentColor}
+.pace-tag{font-size:12px;fill:var(--muted)}
+.pace-tag-last{fill:var(--copper);font-weight:600}
+.vol-bar{fill:#7d9a89}
+.vol-bar-partial{opacity:.45}
+.vol-tag{font-size:10.5px;fill:var(--muted)}
+.vol-tag-peak{fill:var(--copper);font-weight:600}
+.vol-tag-partial{fill:#8a9a8d}
+.year-tick{font-size:11px;fill:var(--muted)}
+.pace-dip-tag{font-size:11px;fill:var(--copper);font-weight:600}
+.annual-notes{display:flex;gap:8px;flex-wrap:wrap;margin-block:16px 4px}
+.annual-notes span{border:1px solid var(--line);font-size:.78rem;padding:5px 8px;border-radius:6px;background:#faf7ee}
+.place-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px;border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.place-timeline article{background:#f7f4ea;padding:16px;transition:background .2s}
+.place-timeline article:hover{background:#efece0}
+.place-timeline h3,.vignettes h3{margin:7px 0}
+.vignettes article{padding:14px 0}
+.bars{display:grid;gap:9px}
+.bars>div{display:grid;grid-template-columns:minmax(72px,auto) minmax(12px,1fr) 4.5ch;align-items:center;gap:8px;font-size:.82rem}
+.bars i{height:9px;background:#ebece3;display:block;border-radius:2px}
+.bars b{height:100%;background:#39634e;display:block}
+.bars strong{text-align:right}
+.bar-active b{background:#a55e36}
+
+/* ---------- 一屏舞台：对比同时在场，动画只负责长出来 ---------- */
+.stage{margin-block:12px;padding:clamp(14px,2.4vw,26px);border:1px solid #d8d3c0;border-radius:12px;
+  background:linear-gradient(180deg,#fdfaf1 0%,#f1edde 100%);box-shadow:0 2px 4px rgba(23,44,36,.05),0 28px 56px -24px rgba(23,44,36,.3),inset 0 1px 0 #fffef8}
+.stage-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:14px}
+.stage-top h3{font-size:clamp(1rem,2.5vw,1.3rem)}
+.replay{flex-shrink:0;font-size:.78rem;border:1px solid #b9ac8d;border-radius:99px;padding:4px 12px;transition:background .25s,transform .25s}
+.replay:hover{background:#eadfc8;transform:translateY(-1px)}
+.stage-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,1fr);gap:20px;align-items:center}
+.stage-body>svg{width:100%;height:auto;max-width:560px;margin:auto;display:block}
+.stage-notes{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.stage-notes span{border:1px solid var(--line);background:#faf7ee;border-radius:6px;padding:4px 10px;font-size:.8rem;font-variant-numeric:tabular-nums}
+.stage-notes .hot{border-color:#c98d5a;background:#f3e4d2;color:#7c3f1d}
+.stage-notes .arrow{border:0;background:none;color:var(--copper)}
+.beam-side{display:grid;gap:14px;justify-items:start}
+.beam-years{display:flex;flex-wrap:wrap;gap:5px}
+.beam-years button{border:1px solid #c9c3ad;border-radius:6px;padding:3px 8px;font-size:.74rem;background:#faf7ee;transition:background .3s,transform .3s,box-shadow .3s}
+.beam-years button:hover{transform:translateY(-1px);box-shadow:0 6px 14px -8px rgba(23,44,36,.4)}
+.beam-years button em{font-style:normal;color:var(--copper);margin-left:4px;font-variant-numeric:tabular-nums}
+.beam-years button b{font-weight:600;margin-left:4px;font-size:.68rem;color:#7c3f1d}
+.beam-years button.lit{background:#e9dfce;border-color:#b9ac8d;box-shadow:0 8px 18px -10px rgba(23,44,36,.5)}
+/* 年轮：未播出前保持终态；播出时逐年描出 */
+.beam-year{fill-opacity:var(--fo,.06);stroke-opacity:.85;transition:opacity .35s}
+svg.animate .beam-year{stroke-dasharray:1;animation:beam-draw 1.05s cubic-bezier(.3,.1,.2,1) both;animation-delay:calc(var(--i)*.5s)}
+@keyframes beam-draw{from{stroke-dashoffset:1;fill-opacity:0}to{stroke-dashoffset:0;fill-opacity:var(--fo,.06)}}
+/* 轨迹叠印 */
+.overlay-track{stroke:#19372e;stroke-width:1;stroke-opacity:var(--to,.15);stroke-linejoin:round;transition:stroke-opacity .35s}
+svg.animate .overlay-track{stroke-dasharray:1;animation:overlay-draw .85s ease-out both;animation-delay:calc(var(--i)*.22s)}
+@keyframes overlay-draw{from{stroke-dashoffset:1;stroke-opacity:0}to{stroke-dashoffset:0;stroke-opacity:var(--to,.15)}}
+.overlay-first{stroke:#3f6b55;stroke-width:1.8}
+.overlay-best{stroke:#a9602f;stroke-width:2.4}
+svg.animate .overlay-first,svg.animate .overlay-best{animation-delay:calc(.2s + var(--i)*.22s)}
+.overlay-first circle{fill:#3f6b55}
+.overlay-best circle{fill:#a9602f}
+.overlay-first text,.overlay-best text{font-size:12px;fill:#5c4a33;paint-order:stroke;stroke:#fdfaf1;stroke-width:3px}
+
+.heat-key{font-size:.73rem;display:flex;justify-content:space-between}
+.heat{display:grid;gap:2px}
+.heat-row{display:grid;grid-template-columns:36px repeat(24,minmax(0,1fr)) 43px;gap:1px;padding:5px 2px;font-size:.7rem;text-align:left;border-radius:6px;transition:background .3s}
+.heat-row:hover{background:#eeeadd}
+.heat-row.focused{background:#e9dfce}
+.heat i{background:#345c47}
+.month-chart{--plot:120px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;position:relative}
+.scale{position:relative;height:var(--plot);font-size:.63rem;white-space:nowrap}
+.scale span{position:absolute;left:0;top:0}
+.scale span:last-child{top:auto;bottom:0}
+.scale span[style]{top:auto}
+.month-years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.month-year small{display:block;text-align:center;margin-top:3px}
+.month-plot{height:var(--plot);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1px;position:relative;border-bottom:1px solid #b6beb0;background:repeating-linear-gradient(0deg,transparent 0 29px,#e6e8dc 29px 30px);box-shadow:inset 0 2px 8px rgba(23,44,36,.07);border-radius:3px 3px 0 0}
+.month-slot{min-width:0}
+.month{padding:0;height:100%;width:100%;position:relative;background:transparent;vertical-align:bottom}
+.month:hover,.month[aria-pressed=true]{background:#73827130}
+.month i{position:absolute;inset:auto 0 0;background:#416752;pointer-events:none;border-radius:1px 1px 0 0}
+.month.highlight i,.month.below i{background:#ad6b47}
+.month.outside i{background:#929a8d}
+.month.pending i{background:repeating-linear-gradient(135deg,#53725e 0 2px,#b5c1ac 2px 4px)}
+.target-line{position:absolute;z-index:1;pointer-events:none;left:0;right:0;bottom:var(--line);border-top:1px dashed #823818}
+.target-line.late{left:83.33%}
+.month-chart output{grid-column:2;font-size:.74rem;min-height:1.4em}
+.month-chart.compact{--plot:105px}
+/* 目标章：完整图直接在场，进入视口后依次升起 */
+.goal-figure[data-play=on] .month i{animation:column-reveal .5s cubic-bezier(.2,.7,.2,1) both}
+.goal-figure[data-play=on] .target-line{animation:target-reveal .8s ease-out .35s both}
+@keyframes column-reveal{from{transform:scaleY(.05);opacity:.1}to{transform:scaleY(1);opacity:1}}
+@keyframes target-reveal{from{opacity:0;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0)}}
+.facts{display:flex;flex-wrap:wrap;gap:16px 36px;margin-top:16px;font-size:.8rem}
+.facts b{font-size:2rem}
+.facts .note{width:100%;margin:0}
+/* 静章：低谷期整体降噪，只留铜色那道痕 */
+.chapter.quiet .month i{background:#7d8f81}
+.chapter.quiet .month.highlight i{background:#ad6b47}
+.chapter.quiet .paper{background:#f7f5ee;border-color:#dfdccb}
+table{width:100%;border-collapse:collapse;text-align:left;font-size:.84rem}
+td,th{padding:8px 3px;border-bottom:1px solid var(--line)}
+.marks{list-style:none;padding:0;margin:0}
+.marks li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+.track-wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.track{display:flex;flex-direction:column;min-width:0;background:#fbf9f0;padding:10px;text-decoration:none;font-size:.73rem;overflow-wrap:anywhere;border:1px solid #e2ddcb;border-radius:9px;transition:transform .25s,box-shadow .25s}
+.track:hover{transform:translateY(-3px);box-shadow:0 14px 26px -12px rgba(23,44,36,.4);background:#fffdf6}
+.track .signature,.signature-empty{height:110px;object-fit:contain}
+.clock{display:block;width:min(100%,320px);margin:auto}
+
+/* ---------- 足迹城市选看 ---------- */
+.city-stage{margin-block:14px;padding:16px;background:linear-gradient(180deg,#f6f2e6,#efeada);border:1px solid #d8d3c0;border-radius:12px;box-shadow:var(--shadow)}
+.city-route{animation:route-enter .7s ease-out both}
+@keyframes route-enter{from{opacity:.25;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.city-route .signature{height:clamp(130px,24vw,300px);object-fit:contain;color:#7b6242;filter:drop-shadow(0 10px 18px rgba(23,44,36,.25))}
+.city-readout{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-block:10px}
+.city-readout b{font-family:"Songti SC",serif;font-size:1.35rem}
+.city-readout small{color:var(--muted)}
+.city-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:5px}
+.city-tags button{padding:3px 7px;border:1px solid #c9b28d;font-size:.72rem;border-radius:6px;transition:background .45s,color .45s,transform .3s}
+.city-tags button:hover{transform:translateY(-1px)}
+.city-tags button.lit{background:#e6af7b;color:#19372e}
+
+/* ---------- 结尾 ---------- */
+.ending{background:#102e26;color:#f6efe2;padding-block:72px 32px}
+.portraits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.portraits article{background:#ffffff0b;border:1px solid #ffffff35;padding:14px;min-width:0}
+.portraits article>.clock,.portraits article>.signature,.mini-goal{height:175px;width:100%}
+.mini-goal .month-years{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mini-goal .scale{color:#fff}
+.portraits h3{margin:10px 0}
+.portraits p{font-size:.86rem}
+.closing{font-family:"Songti SC",serif;font-size:clamp(1.45rem,3.2vw,2.5rem);margin:35px 0;max-width:25em}
+footer{display:flex;flex-wrap:wrap;gap:12px 24px;border-top:1px solid #ffffff42;padding-top:16px;font-size:.85rem}
+
+/* ---------- 顶栏吸附与旧版入口 ---------- */
+.top{position:sticky;top:0;z-index:4;background:#f4f1ea;box-shadow:0 0 0 100vmax #f4f1ea;clip-path:inset(0 -100vmax -1px)}
+
+/* ---------- 暂停/减少动效：一切直接呈现终态 ---------- */
+[data-simple=true] .hero-line .signature polyline{animation:none;stroke-dashoffset:0}
+[data-simple=true] .city-route{animation:none}
+[data-simple=true] .goal-figure .month i,[data-simple=true] .goal-figure .target-line{animation:none}
+[data-simple=true] .beam-year,[data-simple=true] .overlay-track{animation:none}
+[data-simple=true] .heat-row,[data-simple=true] .year-bars>button,[data-simple=true] .beam-years button{transition:none}
+
+@media(max-width:650px){
+  .wrap{width:calc(100% - 28px)}
+  .hero-inner,.pair,.portraits{grid-template-columns:1fr}
+  .hero-inner{gap:18px;padding-block:38px 22px}
+  .hero-line .signature{height:160px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .stage-body{grid-template-columns:1fr;gap:14px}
+  .stage-body>svg{max-width:420px}
+  .place-timeline,.month-years{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .place-timeline article{padding:10px;font-size:.85rem}
+  .track-wall{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .month-chart.compact{--plot:65px}
+  .city-route .signature{height:150px}
+  .bars>div{grid-template-columns:minmax(76px,110px) minmax(10px,1fr) 4.5ch}
+  .bars span{overflow-wrap:anywhere}
+  .first-run{grid-template-columns:1fr;gap:14px;padding-block:26px 0}
+  .first-run-line br{display:none}
+}
+
+/* 2026-11-04：以发现组织场景。详见 docs/2026-11-04-EDITION-PLAN.md。 */
+:root{--paper:#f7f4eb;--muted:#617267;--copper:#a45c38;--line:#d2d6c9}
+body{background:#f3f0e7}
+.wrap{width:min(1160px,calc(100% - 80px))}
+h2{text-wrap:balance;font-size:clamp(2.5rem,5vw,4.2rem);line-height:1.2;letter-spacing:-.04em}
+h3{font-weight:500}
+.top{min-height:64px;gap:18px;box-shadow:0 0 0 100vmax #f3f0e7;background:#f3f0e7;clip-path:inset(0 -100vmax -1px)}
+.top .brand{text-decoration:none;font-family:"Songti SC",serif;font-size:1.2rem;letter-spacing:.08em;white-space:nowrap}
+.chapter-nav{display:flex;gap:28px;margin-left:auto;margin-right:26px;font-size:.8rem}
+.chapter-nav a{text-decoration:none}
+.top button{font-size:.73rem;padding:6px 9px;border-color:#a6b4a6;white-space:nowrap}
+.kicker{font-size:.71rem;line-height:1.8;letter-spacing:.12em;color:var(--muted)}
+.section-head{margin-bottom:34px;max-width:1000px}
+.section-head p:not(.kicker){max-width:48em;font-size:1.05rem;color:var(--muted)}
+.section-head strong{color:var(--copper);font-weight:600}
+.annual,.chapter{padding-block:80px;border-top:1px solid var(--line)}
+.paper{background:transparent;border:0;border-radius:0;box-shadow:none;padding:18px 0}
+figcaption{font-size:.88rem;font-weight:600;line-height:1.6}
+.note{font-size:.78rem;line-height:1.8}
+.memory{padding:4px 0 4px 20px;border-left:2px solid #bd8a66;margin:24px 0;max-width:48em}
+.memory blockquote{margin:10px 0;font-family:"Songti SC",serif;font-size:1.2rem;line-height:1.85}
+.memory-data{font-size:.77rem;line-height:1.8;color:var(--muted)}
+.memory-data>span{display:block;font-size:.66rem;letter-spacing:.12em;margin-bottom:3px;color:var(--copper)}
+.evidence{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:28px}
+.evidence summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0;font-size:.83rem;line-height:1.5;font-weight:500}
+.evidence summary::-webkit-details-marker{display:none}
+.evidence summary>span{font-size:1.1rem;transition:transform .2s}
+.evidence[open]>summary>span{transform:rotate(45deg)}
+.evidence-body{padding:10px 0 26px;min-width:0}
+.evidence .evidence{margin-top:16px}
+.evidence-body .pair{gap:22px}
+.replay:disabled{opacity:.45;cursor:default}
+
+/* 章节眉题承载章号/日期/章名，按正文级别排字 */
+.section-head .kicker,.origin>.kicker,.child-scene>.wrap>.kicker,.ending>.wrap>.kicker{font-size:.95rem;letter-spacing:.09em;font-weight:600;color:#43534a}
+
+/* 序：时间在前，路线留作尾声。 */
+.hero{background:#112c29}
+.hero:before{height:75%;inset:auto -20% -44%;background:radial-gradient(58% 100% at 72% 100%,#cb94695c,transparent 75%)}
+.hero-inner{grid-template-columns:1.2fr 1fr;min-height:570px;gap:55px;padding-block:65px 42px}
+.hero .kicker{color:#b2baad}
+.hero .kicker{font-size:.95rem;letter-spacing:.09em;font-weight:600;color:#c4cec0}
+.hero h1{font-size:clamp(4.5rem,8vw,7.3rem);letter-spacing:-.06em;margin:20px 0 30px;white-space:nowrap}
+.hero-lead{font-size:clamp(1.1rem,1.8vw,1.5rem);line-height:1.9;color:#e9ead9;max-width:22em}
+.start{font-size:.78rem;text-decoration:none;border-bottom:1px solid #6f8176;padding-bottom:7px;margin-top:28px}
+.start span{margin-left:45px;color:#e5af7d}
+.hero-clock{text-align:center;color:#efe8d9}
+.hero-clock>p{font-size:.84rem;color:#c1cabc}
+.hero-clock>p>b{font:400 1.5rem Fraunces,serif;color:#e5b58a}
+.hero-clock>p>span{display:block;font-size:.68rem;margin-top:8px;color:#aebcaf}
+.hero-clock .time-dial{max-width:385px;filter:drop-shadow(0 0 24px #c18a4b10)}
+.hero-stats{padding-block:22px 18px;border-color:#ffffff29;gap:24px}
+.hero-stats b{font-size:clamp(1.8rem,3vw,2.6rem)}
+.hero-stats small{font-size:.68rem;color:#b4bfae}
+.hero-meta{font-size:.65rem;color:#9aab9f}
+.time-dial{width:100%;display:block;overflow:visible;margin:auto}
+.dial-ring{fill:none;stroke:currentColor;stroke-opacity:.18;stroke-width:.8}
+.dial-ring.inner{stroke-opacity:.1}
+.dial-tick{stroke:currentColor;stroke-opacity:.3}
+.dial-hours{font:11px system-ui;fill:currentColor;opacity:.6}
+.dial-ray{stroke-width:9;stroke-linecap:round;stroke:currentColor}
+.dawn-ray{stroke:#c48a58}.night-ray{stroke:#738f87}
+.dial-time{font:400 43px Fraunces,Georgia,serif;fill:currentColor;letter-spacing:-1px}
+.dial-sub{font:9px system-ui;fill:currentColor;opacity:.65}
+
+/* 起点：数字与回忆的一幕，不装入卡片。 */
+.origin{padding-block:95px 60px}
+.origin-scene{display:grid;grid-template-columns:.85fr 1.3fr;gap:65px;align-items:center;margin:22px 0 36px}
+.origin-distance b{display:block;font:400 clamp(6rem,12vw,11.2rem)/1 Fraunces,Georgia,serif;letter-spacing:-.075em;color:var(--copper)}
+.origin-distance>span{font-family:"Songti SC",serif;font-size:2rem;margin-left:8px}
+.origin-distance>p{font-size:.8rem;letter-spacing:.1em;margin:22px 0 0 8px;color:var(--muted)}
+.origin-story h2{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.6}
+.origin-story h2 em{font-style:normal;color:var(--copper);font-family:Fraunces,serif}
+.origin-story>p{font-size:.82rem;color:var(--muted)}
+.origin .memory{margin-top:26px}
+.origin .signature{max-height:280px}
+.annual-composition{display:grid;grid-template-columns:1.4fr 1fr;gap:55px;align-items:start}
+.annual-composition>div{min-width:0}
+.metric-line{display:flex;align-items:center;gap:25px;font-family:Fraunces,serif;font-size:2.6rem;color:var(--copper)}
+.metric-line b{font-weight:400}.metric-line span{font-size:1.4rem;color:#809384}
+.annual-memories .memory:first-child{margin-top:0}
+.annual-memories .memory blockquote{font-size:1.04rem}
+.pace-plot{overflow-x:auto;overscroll-behavior-x:contain}
+.pace-figure svg{min-width:510px}
+.pace-figure .evidence summary{padding-block:12px;font-size:.75rem}
+
+/* 黎明：三个时刻同时留下；夜色到晨光。 */
+.dawn-chapter{padding-block:80px;background:#e9e8dc;border-block:1px solid #d3d7c9}
+.dawn-scenes>.stage-top{padding-bottom:10px}
+.dial-triptych{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.dial-triptych article{padding:25px 24px 22px;background:#f4efe2;min-width:0}
+.dial-triptych article:first-child{background:#203a39;color:#eee7d7}
+.dial-triptych article:nth-child(2){background:#dadccf}
+.dial-triptych article:last-child{background:#f5e6cc}
+.dial-year{font:400 2.2rem Fraunces,serif;display:flex;align-items:baseline;justify-content:space-between}
+.dial-year span{font: .69rem system-ui;opacity:.65}
+.dial-triptych .time-dial{margin-block:16px 10px;max-width:285px}
+.dial-share{display:flex;gap:10px;align-items:baseline}
+.dial-share b{font:400 2.4rem Fraunces,serif}.dial-share small{font-size:1rem}.dial-share span{font-size:.75rem;opacity:.7}
+.dial-triptych .night .note{color:#b4c3b8}
+.dial-triptych.play .dial-ray{stroke-dasharray:1;animation:ray-arrive 1.3s ease-out both;animation-delay:calc(var(--i)*.45s)}
+@keyframes ray-arrive{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.dawn-chapter>.wrap>.memory{display:inline-block;vertical-align:top;width:calc(50% - 24px);margin-right:24px;margin-bottom:0}
+
+/* 地点：由生活角色组织，而非排行榜。 */
+.place-roles{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:32px}
+.place-roles>article{border-top:2px solid #7c9280;padding-top:18px;min-width:0}
+.place-roles h3{font:400 2rem "Songti SC",serif;margin:5px 0 12px}
+.place-roles .signature{height:215px;color:#6a8578}
+.place-roles>article:first-child .signature{color:#a56b43}
+.place-roles .memory{border:0;padding:0;margin:10px 0}
+.place-roles .memory .kicker{font-size:.65rem}
+.place-roles .memory blockquote{font-family:system-ui;font-size:.92rem;line-height:1.9}
+.places-chapter>.memory{max-width:100%;padding-block:16px;border-top:1px solid var(--line);border-left:0;padding-left:0}
+.city-stage{box-shadow:none;border-radius:0;background:#ebe8dc}
+
+/* 育儿：把一个月的轻与生活的重放在一起。 */
+.child-scene{background:#e4e5da;padding-block:70px}
+.child-composition{display:grid;grid-template-columns:1.2fr 1fr;gap:100px;align-items:center;margin-top:12px}
+.child-number{border-left:1px solid #b5bba9;padding-left:45px}
+.child-number>span{font-size:.78rem;color:var(--muted)}
+.child-number>b{display:block;font:400 clamp(4rem,7vw,6.4rem)/1.4 Fraunces,serif;color:#9c6546;white-space:nowrap}
+.child-number small{font:1.15rem "Songti SC",serif;margin-left:12px}
+.child-number p{font-size:.75rem;color:var(--muted)}
+.child-scene .memory{margin-block:20px}
+.child-scene>.wrap>.memory{max-width:none;border:0;padding:0;font-size:.9rem}
+.child-scene>.wrap>.memory blockquote{font-size:1rem}
+
+/* 目标：年度完成程度的清楚对照。 */
+.goal-comparison{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.goal-comparison>article{border-top:2px solid #76907b;padding-top:20px}
+.goal-comparison>article:last-child{border-color:#b68152}
+.goal-score{display:flex;align-items:center;gap:18px;padding:10px 0 14px}
+.goal-score>b{font:400 5.8rem/1.1 Fraunces,serif;color:#3b6550}
+.goal-comparison>article:last-child .goal-score>b{color:#aa653b}
+.goal-score>span{font:400 2rem Fraunces,serif;color:var(--muted)}
+.goal-score small{display:block;font:.75rem system-ui;margin-top:10px}
+.month-tokens{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:5px}
+.month-tokens>span{display:block;text-align:center;font-size:.75rem;padding:10px 0;background:#e4e5da;color:#596a60;border-bottom:2px solid #abb6a7}
+.month-tokens>span.met{background:#496d59;color:#fcf8ec;border-color:#496d59}
+.month-tokens small{font-size:.58rem;margin-left:1px}
+.goal-comparison>article:last-child .met{background:#a86b43;border-color:#a86b43}
+.goal-chapter>.memory{max-width:100%}
+.goal-figure .month i{transform-origin:bottom}
+
+/* 首屏第三格是文字型数字（20:30 → 05:30），单独降一档字号 */
+.hero-stats .span-wide{font-size:clamp(1.25rem,2vw,1.8rem);letter-spacing:0}
+/* 年际迁移：一年一枚小表盘（旧版 DawnMigration 沿用） */
+.year-dials{margin-block:6px 0;padding-top:18px;border-top:1px dashed #c9c3ad}
+.yd-row{display:flex;flex-wrap:wrap;gap:16px 6px;justify-content:space-between;margin-top:8px}
+.yd-year,.yd-flip{display:grid;justify-items:center;gap:3px;min-width:88px}
+.yd-year svg,.yd-flip svg{width:clamp(76px,8.6vw,108px);height:auto}
+.yd-ring{fill:none;stroke:#b9c2b2;stroke-opacity:.55;stroke-width:1}
+.yd-ray{stroke:#93a79b;stroke-width:3;stroke-linecap:round}
+.yd-dawn{stroke:#c48a58}
+.yd-modal{stroke:#415c4d;stroke-width:4.5}
+.yd-pct{font:600 15px system-ui;fill:#3c4f44}
+.yd-label{font-size:.76rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.yd-peak{font-size:.7rem;color:#a45c38;font-variant-numeric:tabular-nums}
+.yd-flag{font-size:.66rem;color:#7c3f1d;border:1px solid #c9b28d;padding:1px 7px;border-radius:99px;background:#f3e4d2}
+.yd-flip .yd-label{color:#7c3f1d;font-weight:600}
+/* 目标章主线 spark：目标设立以来逐月达标 */
+.goal-spark{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;max-width:600px;margin-top:22px}
+.goal-spark>span{font-size:.7rem;text-align:center;padding:8px 0;background:#e4e5da;color:#596a60;border-bottom:2px solid #abb6a7}
+.goal-spark>span.met{background:#496d59;color:#fcf8ec;border-color:#496d59}
+
+/* 日常：同次数，更长距离。 */
+.everyday{border-top:0;padding-top:30px}
+.everyday-chart{background:#e9e9dd;padding:30px 36px;margin-block:26px}
+.everyday-legend{display:flex;gap:24px;align-items:center;font-size:.8rem;margin-bottom:26px}
+.everyday-legend span:before{content:"";display:inline-block;width:16px;height:7px;background:#91a392;margin-right:7px}
+.everyday-legend span:nth-child(2):before{background:#a56c45}
+.everyday-legend small{margin-left:auto;font-size:.7rem;color:var(--muted)}
+.distance-compare{display:grid;grid-template-columns:80px 1fr;gap:18px;align-items:center;margin:25px 0}
+.distance-compare h3{font-size:1rem}
+.distance-row{display:flex;align-items:center;gap:10px;margin:13px 0;padding-right:90px;position:relative}
+.distance-row>span{font-size:.7rem;color:var(--muted);width:36px;flex-shrink:0}
+.distance-row>i{height:14px;background:#91a392;flex-shrink:1;border-radius:0 2px 2px 0}
+.distance-row>b{font:400 1.45rem Fraunces,serif;white-space:nowrap;flex-shrink:0}
+.distance-row>b small{font-size:.65rem}
+.distance-row.year-2026>i{background:#a56c45}
+
+/* 突破：成绩做主角，路线作为可展开收藏。 */
+.race-scene{background:#153b33;color:#f2ebdb;padding-block:80px;--line:#507064;--muted:#ccd8ca;--paper:#153b33;--copper:#e4ac76}
+.race-scene .section-head{max-width:1000px}
+.race-comparison{display:grid;grid-template-columns:1fr 55px 1fr;gap:20px;align-items:center;border-block:1px solid #ffffff29;padding:32px 0;margin-bottom:40px}
+.race-comparison article>b{display:block;font:400 clamp(2.5rem,5.8vw,5.5rem)/1.3 Fraunces,serif;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.race-comparison article:last-child>b{color:#e4ac76}
+.race-comparison article p{font-size:.8rem;color:var(--muted)}
+.race-arrow{font-size:2rem;color:#c69970;text-align:center}
+.record-pair{gap:40px}
+.record-card{padding:26px 30px;background:#ffffff06;border-top:2px solid #7c9c85;color:#eed6b6;min-width:0}
+.record-card:last-child{border-color:#cb996c}
+.record-time{font:400 clamp(2.3rem,4vw,3.5rem) Fraunces,serif;letter-spacing:-.04em}
+.record-card svg{width:100%;margin:18px 0 0;color:#d69e6c}
+.record-card>p:not(.note){font-size:.8rem;color:#d3dccb}
+.race-scene .memory{max-width:100%;margin-top:40px}
+.race-scene .memory blockquote{font-size:1.3rem}
+.race-scene .memory-data>span{color:#d0a678}
+.race-scene .stage,.race-scene .track{color:#19372e;--muted:#617267;--line:#d2d6c9}
+.race-scene .stage{box-shadow:none;border-radius:0}
+.race-scene .track-wall{margin-top:24px}
+.race-scene .track{border-radius:0}
+
+/* 尾声：一条日常路线，回到清晨。 */
+.ending{background:#eeeadd;color:#19372e;padding-block:65px 28px}
+.closing-composition{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center}
+.closing{font-size:1.7rem;line-height:1.85;margin:20px 0 26px}
+.closing-facts{display:flex;gap:35px;font-size:.72rem;color:var(--muted)}
+.closing-facts b{display:block;font:400 2.3rem Fraunces,serif;color:#9a603f;margin-bottom:8px}
+.closing-composition .signature{height:235px;color:#ac754c}
+.closing-composition figcaption{text-align:center;font-size:.69rem;font-weight:400;color:var(--muted)}
+.ending footer{border-color:#b9c3b3;margin-top:40px;font-size:.72rem;gap:14px 25px}
+.ending footer>span{margin-right:auto;color:var(--muted)}
+[data-simple=true] .dial-ray{animation:none}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+@media(max-width:900px){
+  .wrap{width:calc(100% - 44px)}
+  .hero-inner{gap:20px;min-height:500px}.hero h1{font-size:5.4rem}
+  .annual-composition{grid-template-columns:1fr;gap:20px}.annual-memories{display:grid;grid-template-columns:1fr 1fr;gap:24px}.annual-memories .memory{margin:0}
+  .place-roles{gap:20px}.place-roles .signature{height:165px}
+  .child-composition{gap:30px}.dial-year{display:block}.dial-year span{display:block;margin-top:5px}
+  .origin-scene{gap:30px}.origin-distance b{font-size:8rem}
+  .month-tokens{grid-template-columns:repeat(6,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  .wrap{width:calc(100% - 36px)}
+  .section-head .kicker,.origin>.kicker,.child-scene>.wrap>.kicker,.ending>.wrap>.kicker{font-size:.85rem}
+  .hero .kicker{font-size:.85rem}
+  .top{min-height:56px;gap:8px}.top .brand{font-size:1rem}.chapter-nav{gap:12px;margin:0 0 0 auto;font-size:.69rem}.chapter-nav a:nth-child(1),.chapter-nav a:nth-child(3){display:none}.top button{font-size:.65rem;padding:5px 6px}
+  h2{font-size:2rem;line-height:1.38;letter-spacing:-.04em}.section-head{margin-bottom:24px}.section-head p:not(.kicker){font-size:.9rem}
+  .hero-inner{grid-template-columns:1fr;padding-block:34px 20px;gap:12px;min-height:0}
+  .hero h1{font-size:4.65rem;margin:15px 0 22px}.hero-lead{font-size:.91rem}.start{margin-top:19px;font-size:.73rem}
+  .hero-clock .time-dial{width:238px}.hero-clock>p{font-size:.72rem}.hero-clock>p>span{font-size:.62rem}
+  .hero-stats{gap:17px 12px;padding-top:18px}.hero-stats b{font-size:1.8rem}.hero-stats small{font-size:.68rem}.hero-meta{font-size:.68rem;line-height:1.8}
+  .origin{padding-block:55px 42px}.origin-scene{grid-template-columns:1fr;gap:26px;margin-bottom:18px}.origin-distance{position:relative}.origin-distance b{font-size:7.8rem;display:inline-block}.origin-distance>span{font-size:1.4rem;margin-left:14px}.origin-distance>p{margin:12px 0 0 5px;font-size:.75rem}
+  .origin-story h2{font-size:1.8rem}.origin-story h2 br{display:none}.origin-story>p{font-size:.76rem}
+  .annual,.chapter{padding-block:48px}.annual-composition{gap:20px}.annual-memories{grid-template-columns:1fr;gap:20px}
+  .metric-line{font-size:2.1rem}.pace-figure svg{min-width:510px}.pace-figure figcaption{font-size:.75rem}.pace-plot:after{content:'← 横向查看完整年份 →';display:block;font-size:.68rem;color:var(--muted);margin-top:8px}
+  .memory{padding-left:14px;margin-block:20px}.memory blockquote{font-size:1.05rem}.memory-data{font-size:.73rem}.memory .kicker{font-size:.65rem}
+  .evidence{margin-top:22px}.evidence summary{font-size:.78rem;padding:16px 0}.evidence-body{padding-bottom:20px}
+  .dawn-chapter{padding-block:48px}.dial-triptych article{padding:15px 6px}.dial-year{font-size:1.5rem}.dial-year span{font-size:.68rem;letter-spacing:-.02em;line-height:1.6}.dial-share{display:block}.dial-share b{font-size:1.8rem}.dial-share span{display:block;font-size:.68rem}.dial-triptych .note{font-size:.68rem;line-height:1.6}.dial-triptych .time-dial{margin:13px auto}.dial-triptych .dial-sub{display:none}.dial-triptych .dial-time{font-size:43px}.dial-triptych .dial-hours{font-size:17px}
+  .dawn-chapter>.wrap>.memory{display:block;width:100%;margin-right:0}.stage-top{gap:6px}.stage-top figcaption{font-size:.8rem;margin-bottom:0}.replay{font-size:.65rem;padding:5px 8px}
+  .place-roles{grid-template-columns:1fr;gap:28px}.place-roles>article{display:grid;grid-template-columns:1fr 1fr;column-gap:10px}.place-roles>article>.kicker{grid-column:1}.place-roles h3{grid-column:1;margin-top:8px}.place-roles .signature{grid-column:2;grid-row:1 / 4;height:125px}.place-roles .memory{grid-column:1 / -1;margin-top:16px}.place-roles .memory blockquote{font-size:.88rem}
+  .child-scene{padding-block:45px}.child-composition{grid-template-columns:1fr;gap:8px}.child-number{border-left:0;border-top:1px solid #b5bba9;padding:22px 0 8px}.child-number>b{font-size:5.8rem}.child-number>span,.child-number p{font-size:.72rem}
+  .goal-comparison{gap:20px}.goal-score{gap:8px}.goal-score>b{font-size:3.6rem}.goal-score>span{font-size:1.35rem}.goal-score small{font-size:.68rem;line-height:1.7;max-width:6em}.goal-comparison .kicker{font-size:.68rem;letter-spacing:0}.goal-comparison .note{font-size:.7rem}.month-tokens{gap:3px}.month-tokens>span{font-size:.68rem;padding:7px 0}.month-tokens small{display:none}
+  .month-years{grid-template-columns:1fr}.month-chart{--plot:120px}.month-year{margin-bottom:8px}.month-year small{font-size:.78rem}
+  .everyday{padding-top:12px}.everyday-chart{padding:20px 14px}.everyday-legend{gap:12px;font-size:.68rem;flex-wrap:wrap;margin-bottom:20px}.everyday-legend small{margin-left:0;font-size:.68rem}.distance-compare{grid-template-columns:1fr;gap:2px;margin:20px 0}.distance-compare h3{font-size:.84rem}.distance-row{padding-right:18px;gap:7px;margin:10px 0}.distance-row>span{width:29px;font-size:.68rem}.distance-row>b{font-size:1.15rem}.distance-row>i{height:10px}
+  .race-scene{padding-block:50px}.race-comparison{grid-template-columns:1fr 16px 1fr;gap:7px;padding-block:24px;margin-bottom:28px}.race-comparison article>b{font-size:2rem;letter-spacing:-.06em}.race-comparison .kicker{font-size:.68rem;letter-spacing:0}.race-comparison article p{font-size:.7rem}.race-arrow{font-size:1.1rem}
+  .record-pair{gap:24px}.record-card{padding:20px}.record-time{font-size:2.8rem}.race-scene .memory blockquote{font-size:1.12rem}
+  .ending{padding-block:45px 26px}.closing-composition{grid-template-columns:1fr;gap:25px}.closing{font-size:1.35rem}.closing-facts{gap:25px;font-size:.7rem}.closing-facts b{font-size:1.9rem}.closing-composition .signature{height:170px}.ending footer{margin-top:24px}.ending footer>span{width:100%}
+}
+/* 比较条共用固定绘图区，数字不参与挤压比例。 */
+.distance-row{display:grid;grid-template-columns:36px minmax(0,1fr) 80px;padding-right:0}
+.distance-row>i{min-width:0}
+@media(max-width:650px){.distance-row{grid-template-columns:29px minmax(0,1fr) 60px;padding-right:0}}

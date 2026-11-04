@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 640" role="img" aria-labelledby="title desc">
+  <title id="title">贾栾的路书</title>
+  <desc id="desc">Keep 累计里程、运动构成与年份。没有同步数据时不显示成绩。</desc>
+  <rect width="1080" height="640" fill="#f6f1e6"/>
+  <rect x="28" y="28" width="1024" height="584" fill="none" stroke="#1f1a16" stroke-opacity="0.18"/>
+  <rect x="64" y="64" width="72" height="72" fill="none" stroke="#a33b32" stroke-width="2" transform="rotate(-8 100 100)"/>
+  <text x="100" y="112" text-anchor="middle" font-size="36" fill="#a33b32" font-family="Songti SC, Noto Serif SC, serif">栾</text>
+  <text x="168" y="92" font-size="16" letter-spacing="4" fill="#6e6256">JIA LUAN · KEEP</text>
+  <text x="168" y="136" font-size="42" fill="#1f1a16" font-family="Songti SC, Noto Serif SC, serif">贾栾的路书</text>
+  <text x="1000" y="124" text-anchor="end" font-size="60" fill="#1f1a16" font-family="Fraunces, Palatino, serif">13555</text>
+  <text x="1000" y="152" text-anchor="end" font-size="16" fill="#6e6256">公里</text>
+  <text x="64" y="196" font-size="15" fill="#6e6256">2018-04-18  —  2026-11-03</text>
+  <text x="64" y="250" font-size="15" fill="#c24b34">跑步</text><text x="64" y="286" font-size="28" fill="#1f1a16" font-family="Fraunces, Palatino, serif">13555</text><text x="64" y="310" font-size="13" fill="#6e6256">1819 次</text>
+  <text x="808" y="250" font-size="15" fill="#9a7844">最长连续</text>
+  <text x="808" y="286" font-size="28" fill="#1f1a16" font-family="Fraunces, Palatino, serif">98</text>
+  <text x="808" y="310" font-size="13" fill="#6e6256">天</text>
+  <text x="64" y="360" font-size="14" letter-spacing="3" fill="#6e6256">年份</text>
+  <line x1="64" y1="470" x2="1016" y2="470" stroke="#1f1a16" stroke-opacity="0.2"/>
+  <rect x="160.0" y="465.7" width="70.4" height="4.3" rx="3" fill="#c24b34"/><text x="195.2" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2018</text><rect x="244.4" y="442.2" width="70.4" height="27.8" rx="3" fill="#c24b34"/><text x="279.7" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2019</text><rect x="328.9" y="331.9" width="70.4" height="138.1" rx="3" fill="#c24b34"/><text x="364.1" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2020</text><rect x="413.3" y="336.4" width="70.4" height="133.6" rx="3" fill="#c24b34"/><text x="448.6" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2021</text><rect x="497.8" y="341.9" width="70.4" height="128.1" rx="3" fill="#c24b34"/><text x="533.0" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2022</text><rect x="582.2" y="412.7" width="70.4" height="57.3" rx="3" fill="#c24b34"/><text x="617.4" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2023</text><rect x="666.7" y="387.0" width="70.4" height="83.0" rx="3" fill="#c24b34"/><text x="701.9" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2024</text><rect x="751.1" y="326.0" width="70.4" height="144.0" rx="3" fill="#c24b34"/><text x="786.3" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2025</text><rect x="835.6" y="320.0" width="70.4" height="150.0" rx="3" fill="#c24b34"/><text x="870.8" y="492" text-anchor="middle" font-size="12" fill="#6e6256">2026</text>
+  <text x="64" y="560" font-size="13" fill="#6e6256">由本地 activities.json 导出，轨迹不画在这张海报上。</text>
+</svg>
